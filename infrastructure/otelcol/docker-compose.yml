@@ -1,0 +1,9 @@
+version: "3"
+services:
+  opentelemetry-collector-contrib:
+    image: otel/opentelemetry-collector-contrib:0.43.0
+    command: ["--config=/etc/otel-collector-config.yml"]
+    volumes:
+      - ./otel-collector-config.yml:/etc/otel-collector-config.yml
+      - ./logpods:/var/log/pods
+
